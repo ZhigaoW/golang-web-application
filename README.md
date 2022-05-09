@@ -74,7 +74,10 @@ Server
 ```
 
 
-http.handler是一个接口，其中定义了ServeHttp()方法
+http.handler是一个接口，其中定义了ServeHttp()方法，其中ServeHttp有两个参数
+
+- HTTPResponesWriter
+- 指向Request的Struct的指针
 
 - http.Handle
 - http.HandleFunc

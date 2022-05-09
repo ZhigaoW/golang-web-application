@@ -1,15 +1,37 @@
 package main
 
-import "net/http"
-
-type MyHandler struct{}
-
-func (m *MyHandler) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
-	rw.Write([]byte("MyHandler Test!"))
-}
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
-	mh := MyHandler{}
-	http.ListenAndServe("localhost:9999", &mh)
+
+	// http.HandleFunc("/notfound", http.NotFound)
+	http.HandleFunc("/helloworld", func(w http.ResponseWriter, r *http.Request) {
+		url := r.URL
+		query := url.Query()
+
+		// 返回数组
+		id := query["id"]
+		log.Println(id)
+
+
+		// 返回第一个参数
+		name := query.Get("name")
+		log.Println(name)
+	})
+	
+	
+	
+	
+	
+	
+	
 
 }
+
+
+
+
+
