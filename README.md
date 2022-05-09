@@ -1,7 +1,9 @@
 # golang-web-application
 
+## Go 内置的标准库
 
-## Go网页基础
+
+
 
 ### 如何创建Web Server
 
@@ -25,8 +27,6 @@ func (srv *Server) ListenAndServe() error {
 }
 ```
 
-
-
 ```go
 func (srv *Server) Serve(l net.Listener) error {
 	...
@@ -42,7 +42,6 @@ func (srv *Server) Serve(l net.Listener) error {
 }
 ```
 
-
 ```go
 
 // Serve a new connection.
@@ -55,8 +54,6 @@ func (c *conn) serve(ctx context.Context) {
 	}
 }
 ```
-
-
 
 *http.ListenAndServer()*
 
@@ -84,6 +81,7 @@ http.handler是一个接口，其中定义了ServeHttp()方法，其中ServeHttp
 
 
 
+## [julienschmidt/httprouter](https://github.com/julienschmidt/httprouter)
 
 
 
@@ -92,15 +90,6 @@ http.handler是一个接口，其中定义了ServeHttp()方法，其中ServeHttp
 
 
 
-
-
-
-
-
-
-
-
-
-
+## 数据库
 
 
